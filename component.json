@@ -1,0 +1,15 @@
+{
+  "name": "tower-guides",
+  "repo": "tower/guides",
+  "description": "Tower Guides component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/emitter": "*"
+  },
+  "development": {
+    "visionmedia/mocha": "*"
+  },
+  "scripts": ["index.js"],
+  "license": "MIT"
+}
