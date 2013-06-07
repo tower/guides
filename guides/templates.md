@@ -1,6 +1,6 @@
 # Template Engine
 
-Tower's template component is built in response to the 100's of other template engines that fall short in on or more key areas that you need for a great template engine:
+Tower's template component is built in response to the 100's of other template engines that fall short in on or more key areas:
 
 - performance
 - extensibility
