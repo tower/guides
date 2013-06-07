@@ -42,4 +42,4 @@ The `content` API has 2 methods:
 
 So you define `attr` for every property you want to expose to the DOM, and `action` for every function you want to run when the user does something. That's it!
 
-You might wonder if that's really all you need (`attr` and `action`), "what about arbitrary functions" or "what about this one case"? You might be right, there may be a few more cases to cover. But so far based on using this it doesn't seem like you'll need anything more that this. We'll have to all figure out the exact best way as we go, but for now this is a super lean and super simple approach.
+You might wonder if that's really all you need (`attr` and `action`), "what about arbitrary functions" or "what about this one case"? You might be right, there may be a few more cases to cover. But so far based on using this it doesn't seem like you'll need anything more that this. We'll have to all figure out the exact best way as we go, but for now this is a super lean and super simple approach, and seems to cover pretty much every use case in practice.
