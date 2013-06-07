@@ -30,7 +30,7 @@ That's it! You can put any arbitrary data into content attributes.
 
 Now why is this preferrable to the other frameworks approaches? Two big reasons:
 
-1. You don't have to add a bunch of heavy-weight code to all of your framework objects for handling observing. Which means the rest of your code is just using plain JavaScript objects.
+1. You don't have to add a bunch of heavy-weight code to all of your framework objects for handling observing. Which means the rest of your code is just using plain JavaScript objects. Which means your code is super fast (and lightweight).
 2. You're being explicit about the content the user sees. By being explicit, you can clearly see where the data in your app interfaces with the DOM, so you'll know where to look for rendering performance issues immediately, without having to learn how the entire framework mananges their observer behavior.
 
 ### The parts of `content`
