@@ -54,3 +54,15 @@ fn(scope);
 ```
 
 it basically just iterates through a bunch of functions, passing scopes to directives which then apply the scope data to the DOM.
+
+## Examples
+
+### Nav
+
+```html
+<ul class="nav nav-tabs">
+  <li data-list="item in nav" data-class="active">
+    <a href="#"></a>
+  </li>
+</ul>
+```
