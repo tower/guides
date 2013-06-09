@@ -43,3 +43,26 @@ Want more?
 <div data-list="user in users [buffer: 2, max: 10] | filter: startsWith(a) | sort: reverse()"></div>
 ```
 
+## Deep Dive Into Expressions
+
+Now that you know what expressions are, let's get a better picture on how it works.
+
+The expression engine has the following stages:
+
+```
+Input -> Lexer -> Parser -> Search
+```
+
+`tower-expression/index.js` exposes an `expression` function and accepts a string: an expression. It'll hand the big work of lexing and parsing the string.
+
+We've made an extensible Lexer that's not specific to the expression system.
+
+```js
+var lex = new Lexer()
+  .def('token1', /^\[$/)
+  .string('random string to lex')
+  .start();
+  
+  
+```
+
