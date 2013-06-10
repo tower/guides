@@ -6,7 +6,9 @@ In Tower, an "element" is:
 
 > a template + some JavaScript
 
-That's it. So take a pager for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "pager" which is just some HTML with a JavaScript API. Here's how that might look.s
+That's it.
+
+So take a pager for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "pager" which is just some HTML with a JavaScript API. Here's how that might look.
 
 ## The Element's HTML Template
 
