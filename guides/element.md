@@ -104,4 +104,4 @@ However, if you do end up creating a complex UI component like these, I recommen
 
 This also goes to show, it should be easy to integrate any external UI thingy into Tower so it can be used with this standard API.
 
-Last little note. I'd say that most of the time you won't need to build custom elements, and can instead just use plain HTML templates and the built in directives. But if the time comes where that's not enough, this is here to make the enhancement easy.
+Last little note. I'd say that most of the time you won't need to build custom elements, and can instead just use plain HTML templates and the built in directives. But if the time comes where that's not enough, this is here to make life easy.
