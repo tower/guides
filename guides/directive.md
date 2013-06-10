@@ -36,7 +36,7 @@ directive('data-expires', function(scope, el, attr){
 });
 ```
 
-It's as simple as that. Now when that DOM node is encountered, and the directives are parsed for it (this stuff all happens when you run a DOM node through a tower-template), it will execute that directive, passing in the `scope` (the current `tower-content` instance which has a bunch properties and methods on it), the actual DOM element `el`, and `attr` which has the value that the element attribute was set to, parsed using `tower-expression`. All you really need to know is that in this directive function, you get the element that had that directive on it, and some data you can use (or ignore) to manipulate your element.
+It's as simple as that. Now when that DOM node is encountered, and the directives are parsed for it (this stuff all happens when you run a DOM node through a template), it will execute that directive, passing in the `scope` (the current `tower-content` instance which has a bunch properties and methods on it), the actual DOM element `el`, and `attr` which has the value that the element attribute was set to, parsed using `tower-expression`. All you really need to know is that in this directive function, you get the element that had that directive on it, and some data you can use (or ignore) to manipulate the element.
 
 ## Resources
 
