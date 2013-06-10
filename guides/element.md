@@ -1,8 +1,8 @@
 # Elements
 
-Once you start building more complex templates which have custom JavaScript, and maybe some configuration (like pagers, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
+Once you start building more complex templates which have custom JavaScript, and maybe some configuration (like paginators, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
 
-In Tower, an "element" is _a template + some JavaScript_. That's it. So take a pager for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "pager" which is just some HTML with a JavaScript API. Here's how that might look:
+In Tower, an "element" is _a template + some JavaScript_. That's it. So take a paginator for example. Rather than calling it a "paginator view" or something that has a "pagination controller", just think of creating a "paginator" which is just some HTML with a JavaScript API. Here's how that might look:
 
 ## The Element's HTML Template
 
@@ -25,33 +25,33 @@ Elements create a new content scope automatically for you, so you just need to k
 
 ## The Element's JavaScript
 
-Here's how we'd define the pager element that works with the above HTML template:
+Here's how we'd define the paginator element that works with the above HTML template:
 
 ```js
 var element = require('tower-element');
 var html = require('./template'); // the template HTML from above
 
-element('pager')
+element('paginator')
   .template(html)
-  .action('prev', function(pager){
-    // do something to the pager, pager.el, or pager.content
+  .action('prev', function(paginator){
+    // do something to the paginator, paginator.el, or paginator.content
   })
-  .action('next', function(pager){
+  .action('next', function(paginator){
 
   });
 ```
 
-Then we can instantiate the pager like this:
+Then we can instantiate the paginator like this:
 
 ```js
-var pager = element('pager').init();
-var el = pager.render();
+var paginator = element('paginator').init();
+var el = paginator.render();
 ```
 
 The actual DOM node is stored on the element instance as well (after `.render()` has been called):
 
 ```js
-pager.el
+paginator.el
 ```
 
 ## Using Attributes on Elements
@@ -60,7 +60,7 @@ Now what if we want to be able to specify the label for `Prev` and `Next`?
 
 Easy!
 
-We just need to make the hardcoded strings in the template into variables (like mustache/handlebars), and add those attributes to the `element('pager')` DSL (and you can set default values too):
+We just need to make the hardcoded strings in the template into variables (like mustache/handlebars), and add those attributes to the `element('paginator')` DSL (and you can set default values too):
 
 ```html
 <ul class="pager">
@@ -70,23 +70,23 @@ We just need to make the hardcoded strings in the template into variables (like 
 ```
 
 ```js
-element('pager')
+element('paginator')
   .template(html)
   .attr('prevLabel', 'string', 'Prev')
   .attr('nextLabel', 'string', 'Next')
-  .action('prev', function(pager){
+  .action('prev', function(paginator){
     
   })
-  .action('next', function(pager){
+  .action('next', function(paginator){
 
   });
 ```
 
-So now if you instantiated and rendered your pager, it would be rendered like it was before. But you can also customize the labels this time:
+So now if you instantiated and rendered your paginator, it would be rendered like it was before. But you can also customize the labels this time:
 
 ```js
-var pager = element('pager').init();
-document.body.addChild(pager.render({ prevLabel: '<', nextLabel: '>' }));
+var paginator = element('paginator').init();
+document.body.addChild(paginator.render({ prevLabel: '<', nextLabel: '>' }));
 ```
 
 ## Building hardcore UI elements
