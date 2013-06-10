@@ -1,8 +1,8 @@
 # Elements
 
-Once you start building more complex templates which have custom JavaScript, and maybe some configuration (like paginators, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
+Once you start building more complex templates which have custom JavaScript, and maybe some configuration (like pagers, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
 
-In Tower, an "element" is _a template + some JavaScript_. That's it. So take a paginator for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "paginator" which is just some HTML with a JavaScript API. Here's how that might look:
+In Tower, an "element" is _a template + some JavaScript_. That's it. So take a pager for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "pager" which is just some HTML with a JavaScript API. Here's how that might look:
 
 ## The Element's HTML Template
 
@@ -25,7 +25,7 @@ Elements create a new content scope automatically for you, so you just need to k
 
 ## The Element's JavaScript
 
-Here's how we'd define the paginator element that works with the above HTML template:
+Here's how we'd define the pager element that works with the above HTML template:
 
 ```js
 var element = require('tower-element');
@@ -41,7 +41,7 @@ element('pager')
   });
 ```
 
-Then we can instantiate the paginator like this:
+Then we can instantiate the pager like this:
 
 ```js
 var pager = element('pager').init();
@@ -82,7 +82,7 @@ element('pager')
   });
 ```
 
-So now if you instantiated and rendered your paginator, it would be rendered like it was before. But you can also customize the labels this time:
+So now if you instantiated and rendered your pager, it would be rendered like it was before. But you can also customize the labels this time:
 
 ```js
 var pager = element('pager').init();
