@@ -100,7 +100,7 @@ document.body.addChild(pager.render());
 
 Ideally, this element API will allow for creating super robust/complex UI elements, such as forms, [datagrids](https://github.com/mleibman/SlickGrid) and things like Pinterest's scroller (Airbnb open sourced [infinity](https://github.com/airbnb/infinity) which is similar).
 
-However, if you do end up creating a complex UI component like these, I recommend not building all of the logic into the `element` DSL. Instead, try to build it so it can be used independently of Tower, but then you can wrap it in a Tower `element` and release that repo too, so your component can easily hook into Tower's templating system.
+However, if you do end up creating a complex UI component like these, I recommend not building all of the logic into the `element` DSL. Instead, try to build it so it can be used independently of Tower, but then you can wrap it in a Tower `element` and release that repo too, so your component can easily hook into Tower's templating system. This way, if someone came along and wanted to use your component but they were using something like Ember or Angular, they could make it work their too.
 
 This also goes to show, it should be easy to integrate any external UI thingy into Tower so it can be used with this standard API.
 
