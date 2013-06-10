@@ -89,6 +89,13 @@ var pager = element('pager').init();
 document.body.addChild(pager.render({ prevLabel: '<', nextLabel: '>' }));
 ```
 
+You can also pass the attribute values in on `init`, in case you wanted to set up defaults. Either way, using `.init` or `.render` works fine the first time around:
+
+```js
+var pager = element('pager').init({ prevLabel: '<', nextLabel: '>' });
+document.body.addChild(pager.render());
+```
+
 ## Building hardcore UI elements
 
 Ideally, this element API will allow for creating super robust/complex UI elements, such as forms, [datagrids](https://github.com/mleibman/SlickGrid) and things like Pinterest's scroller (Airbnb open sourced [infinity](https://github.com/airbnb/infinity) which is similar).
