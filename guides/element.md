@@ -1,6 +1,6 @@
 # Elements
 
-Once you start building more complex templates which have custom JavaScript, and maybe some configuration (like pagers, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
+Once you start building more complex [templates](/guides/templates) which have custom JavaScript, and maybe some configuration (like pagers, modal windows, form fields, etc.), custom [elements](https://github.com/tower/element) are perfect for this.
 
 In Tower, an "element" is _a template + some JavaScript_. That's it. So take a pager for example. Rather than calling it a "pager view" or something that has a "pagination controller", just think of creating a "pager" which is just some HTML with a JavaScript API. Here's how that might look.s
 
