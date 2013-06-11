@@ -15,9 +15,19 @@ Here's how the `exec` method looks for some custom adapter:
 
 ```js
 var adapter = require('tower-adapter');
+var mysql = require('mysql');
 
 adapter('my-adapter').exec = function(query, fn){
-  
+  var table = query.selects[0].resource;
+  var constraint = query.constraints[0];
+  var condition = [constraint.left.attr, constraint.operator, constraint.right.value].join(' ');
+
+  var statement = [
+    'SELECT * FROM ' + table  // SELECT * FROM posts
+    'WHERE ' + constraint     // WHERE likeCount >= 10
+  ];
+
+  mysql.execute(statement, fn);
 };
 ```
 
