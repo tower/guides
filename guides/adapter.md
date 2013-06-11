@@ -112,7 +112,7 @@ adapter('mysql').exec = function(query, fn){
 };
 ```
 
-Tower has started creating a [MySQL adapter](https://github.com/tower/mysql-adapter) that shows more of the edge cases you might have to consider when you dig into it. But still, it's relatively simple. Now you can save and query any data in MySQL.
+Tower has started creating a [MySQL adapter](https://github.com/tower/mysql-adapter) that shows how to more robustly convert a query object into a SQL statement. But still, it's relatively simple. Now you can save and query any data in MySQL.
 
 To really make a database adapter robust you would have to dig into the documentation for that specific database to make sure you support as much as possible in as efficient a way as possible. But know that, once you finish an adapter and open source that shit, you solved the problem for _everyone_, and you'll never have to deal with it again\*.
 
