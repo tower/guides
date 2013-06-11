@@ -122,4 +122,4 @@ No guides on this yet. For now, see the [EC2 adapter](https://github.com/tower/e
 
 In the end, by having all of these adapters, everything will have one standard query API.
 
-_\* That is, not counting the multiple refactorings and trying to make it the fastest adapter in the world :). And the occasional bug too. But assuming you spent some time making it quality, people will use your adapter and potentially contribute to it. The _hardcore_ bugs are left to the actual database engineers._
+_\* That is, not counting the multiple refactorings and trying to make it the fastest adapter in the world :). And the occasional bug too. But assuming you spent some time making it quality, people will use your adapter and potentially contribute to it. The hardcore bugs are left to the actual database engineers._
