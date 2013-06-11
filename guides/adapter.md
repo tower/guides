@@ -7,7 +7,7 @@ Adapters are an abstraction over remote services and databases. This includes pr
 - Things without APIs that you can make have an API, such as web crawling
 - Operating system resources like files, processes, installed packages, etc.
 
-They make it possible to have a standard interface to everything data.
+They make it possible to have a standard interface to any data, anywhere.
 
 All it takes to implement an adapter is defining one method, `exec`. If you do this you can perform all the standard query actions (create/read/update/delete), and the resources your adapter abstracts become usable just like any other resource (like a **m**odel in traditional MVC frameworks like Rails).
 
