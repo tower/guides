@@ -30,7 +30,7 @@ It is up to your specific adapter to determine how to handle the query object. T
 - `query.paging`: the `limit` and `offset` values specified, if any
 - `query.sorting`: an array of the different sorting properties/directions
 
-Again, all of that is described in depth in the [query section](/guides/queries). For now just know that to implement a custom adapter, you simply implement the `exec` function, which just means taking those 5 query properties and converting them into the database- or service-specific format.
+Again, all of that is described in depth in the [query section](/guides/queries). For now just know that to implement a custom adapter, you simply implement the `exec` function, which means taking those 5 query properties and converting them into the database- or service-specific format.
 
 ## Implementing a REST adapter
 
