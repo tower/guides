@@ -1,6 +1,6 @@
 # Templates
 
-Tower's template component is built in response to the 100's of other template engines that fall short in on or more key areas:
+Tower's template component is built in response to the 100's of other template engines that fall short in one or more key areas:
 
 - performance
 - extensibility
@@ -19,7 +19,7 @@ var fn = template(el);
 fn({ some: 'data' });
 ```
 
-A template function `fn` is build by passing a DOM node to `template`.
+A template function `fn` is built by passing a DOM node to `template`.
 
 ```js
 var fn = template(el);
