@@ -1,6 +1,6 @@
 # Expression Engine
 
-Within Tower, sits an increadibly powerful expression engine that powers every binding. We felt like we could create an expressive language that sits in element attributes.
+Within Tower, sits an incredibly powerful expression engine that powers every binding. We felt like we could create an expressive language that sits in element attributes.
 
 Let's get started with a simple example:
 
@@ -14,10 +14,10 @@ That's cool, right? Well, it's just an empty text binding, nothing to it. So let
 <div data-text="user"></div>
 ```
 
-This would effectively render the following, if `user` would equal to `HelloWorld`
+This would effectively render the following, if `user` would equal to `Joe`
 
 ```html
-<div data-text="user">HelloWorld</div>
+<div data-text="user">Joe</div>
 ```
 
 This short example just showed you a simple expression; a string expression. Expressions do get more complicated than that, but the premise stays the same.

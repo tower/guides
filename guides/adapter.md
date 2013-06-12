@@ -9,6 +9,8 @@ Adapters are an abstraction over remote services and databases. This includes pr
 
 They make it possible to have a standard interface to any data, anywhere.
 
+You achieve one standard query API by having adapters.
+
 All it takes to implement an adapter is defining one method, `exec`. If you do this you can perform all the standard query actions (create/read/update/delete), and the resources your adapter abstracts become usable just like any other resource (like a **m**odel in traditional MVC frameworks like Rails).
 
 Here's how the `exec` method looks for some custom adapter:
@@ -84,7 +86,7 @@ function serializeParams(query) {
 }
 ```
 
-Notice how small that is. Basically this is all it took to hook up your resources to a backend, with full search/sorting/pagination built in.
+This is all it takes to hook up your resources to a backend with full search/sorting/pagination.
 
 You can implement remote service and database adapters just as easily.
 
@@ -112,14 +114,10 @@ adapter('mysql').exec = function(query, fn){
 };
 ```
 
-Tower has started creating a [MySQL adapter](https://github.com/tower/mysql-adapter) that shows how to more robustly convert a query object into a SQL statement (thanks to the [squel](https://github.com/hiddentao/squel) repo). But still, it's relatively simple. Now you can save and query any data in MySQL.
+Tower has a simple [MySQL adapter](https://github.com/tower/mysql-adapter) that shows how to convert a query object into a SQL statement (thanks to the [squel](https://github.com/hiddentao/squel) repo). Have fun saving and querying any data in MySQL.
 
-To really make a database adapter robust you would have to dig into the documentation for that specific database to make sure you support as much as possible in as efficient a way as possible. But know that, once you finish an adapter and open source that shit, you solved the problem for _everyone_, and you'll never have to deal with it again\*.
+To REALLY make a database adapter robust, dig into the database's documentation and implement all it's features. Please finish and open-source an adapter! You will solve the problem for _everyone_, and you will never have to deal with it again\*.
 
 ## Implementing a remote service adapter
 
-No guides on this yet. For now, see the [EC2 adapter](https://github.com/tower/ec2-adapter) for the most complete example so far. Basically, in addition to making any database queryable, you can do that to remote services as well.
-
-In the end, by having all of these adapters, everything will have one standard query API.
-
-_\* That is, not counting the multiple refactorings and trying to make it the fastest adapter in the world :). And the occasional bug too. But assuming you spent some time making it quality, people will use your adapter and potentially contribute to it. The hardcore bugs are left to the actual database engineers._
+No guides on this yet. You can make a remote service queryable just like a database. For now, see the most complete example [EC2 adapter](https://github.com/tower/ec2-adapter).
