@@ -38,7 +38,7 @@ exports.create = function(recipe, args, fn){
 You have full control over how the arguments are parsed and what happens. Here is an example of parsing arguments with [commander](https://github.com/visionmedia/commander.js/):
 
 ```js
-exports.create = function(recipe, args, done){
+exports.create = function(recipe, args, fn){
   var projectName = args[4];
 
   var options = require('commander')
