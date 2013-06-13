@@ -52,5 +52,6 @@ exports.create = function(recipe, args, done){
 
   // ...
 };
+```
 
 Take a look at the [component-cookbook source](https://github.com/tower/component-cookbook/blob/master/index.js) for the robust implementation.
