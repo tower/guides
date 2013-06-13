@@ -1,6 +1,6 @@
 # Resources
 
-A resource is a piece of data. It's like a model in traditional web MVC's, but it is more general than that. All data in your app are resources:
+A resource is a piece of data. It's like a model in traditional web MVC's, but it is more general than that. Resources can be:
 
 - database records
 - remote API JSON responses, 
