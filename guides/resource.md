@@ -17,4 +17,11 @@ This has powerful implications. If you unify all of those different use cases, y
 
 What this means is astounding. You have one simple abstraction over _all_ data.
 
-You can transfer your knowledge of data models to completely new areas.
+You can transfer your knowledge of data models to completely new areas. And you can query any of this data using a robust and extensible query language in JavaScript.
+
+```js
+resource('post')
+  .where('likeCount').gte(10)
+  .page(2)
+  .all();
+``` 
