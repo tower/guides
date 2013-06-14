@@ -1,0 +1,9 @@
+# Queries
+
+Queries are one of the most powerful things in tower. They are the interface between resources and adapters, making it possible to find/create/update/remove records across adapters using a standard syntax.
+
+Tower's query API is very similar to most SQL-like query languages. As it turns out, even NoSQL databases like Cassandra and Neo4j have SQL-like query languages. The reason is, when you start talking about resources with attributes, and relationships between resources, it all boils down to [set theory](http://en.wikipedia.org/wiki/Set_theory), or more specifically [graph theory](http://en.wikipedia.org/wiki/Graph_theory) and [relational algebra](http://en.wikipedia.org/wiki/Relational_algebra). I'm not sure the formal relationship between these different areas of mathematics, but they all are required areas of study when building a query language.
+
+In the most general sense, a query is a set of constraints applied to a graph, where the graph is the all of the resources and attributes, and the constraints are [linear inequalities](http://en.wikipedia.org/wiki/Linear_inequality) such as `posts.likeCount >= 10`. The query analyzer then figures out the most optimal way to traverse the graph of resources and attributes (across adapters) and builds a [query plan](http://en.wikipedia.org/wiki/Query_plan): the most optimal way to traverse the graph given those constraints.
+
+This is what Tower's query engine does. You build a query, which builds basically a graph of resources and attributes across adapters, and it then builds a "topology" (the most optimal map/way to query that data), and then performs the queries on the adapters, and you get back the final result. You don't need to worry at all about the database-specific implementations.
