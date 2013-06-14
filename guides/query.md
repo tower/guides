@@ -81,7 +81,9 @@ query().select('user');
 
 ## Queries and Relations
 
-All of the theory has been fleshed out on how to robustly implement a generic query executor that works across all different types of databases (mysql, mongodb, cassandra, neo4j, etc.) and remote services (facebook, twitter, etc.). _And between adapters_, such as "fetch all facebook posts for users in our database who have signed up in the past 2 weeks" or whatever. Cross-adapter queries means, soon, you will be able to query anything, anywhere. This means that data objects everywhere can be queried and combined in new ways.
+All of the theory has been fleshed out on how to robustly implement a generic query executor that works across all different types of databases (mysql, mongodb, cassandra, neo4j, etc.) and remote services (facebook, twitter, etc.). _And between adapters_, such as "fetch all facebook posts for users in our database who have signed up in the past 2 weeks" or whatever. Cross-adapter queries means you will be able to query anything, anywhere. This means that data objects everywhere can be queried and combined in new ways.
+
+However, we're not quite finished this yet. Stay tuned!
 
 ### The math
 
