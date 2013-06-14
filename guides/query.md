@@ -26,7 +26,7 @@ query()
 
 It is very similar to a SQL query.
 
-There are 5 main properties on the query object:
+There are 4 main properties on the query object:
 
 - `query.selects`: an array of all the tables/collections/keystores (i.e. resources) used in the query
 - `query.constraints`: an array of `<left> <operator> <right>` statements like `likeCount >= 10` (as objects, so they're easy to manipulate)
