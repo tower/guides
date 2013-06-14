@@ -2,10 +2,6 @@
 
 Directives are the API to the DOM. In a perfect world, they're the only place your app code touches the DOM.
 
-```html
-
-```
-
 One developer called them [domain-specific extensions to HTML](http://henriquat.re/directives/introduction-to-directives/introductionToDirectives.html).
 
 ## Creating a custom directive
