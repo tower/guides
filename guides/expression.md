@@ -62,7 +62,4 @@ var lex = new Lexer()
   .def('token1', /^\[$/)
   .string('random string to lex')
   .start();
-  
-  
 ```
-
