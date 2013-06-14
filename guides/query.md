@@ -127,7 +127,7 @@ If you think of it in terms of 3 adapters, `facebook, twitter, mongodb`, and the
 
 One issue is, there can't be any _directed cycles_. Realizing this simplified everything, because in my head I kept thinking of that case and not seeing a solution, but from what I've read they say _it must be a DAG_ (directed acyclic graph), no cycles! We can come back to handling the cyclic case later (maybe the algorithm can just randomly say one goes before the other).
 
-So to figure out the best way to do the query, you have to figure out the network flow problem on `J ⊂ E`. That's as far as I got, and I know it's possible. But for now, I just want to get the simple case of querying individual records (no joins/relations to start). Once that's done, then it will be clearer how to solve this problem.
+So to figure out the best way to do the query, you have to figure out the network flow problem on `J ⊂ E`. That's pretty much it.
 
 ## Summary
 
