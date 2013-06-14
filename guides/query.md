@@ -6,7 +6,7 @@ Tower's query API is very similar to most SQL-like query languages. As it turns 
 
 In the most general sense, a query is a set of constraints applied to a graph, where the graph is all of the resources and attributes, and the constraints are [linear inequalities](http://en.wikipedia.org/wiki/Linear_inequality) such as `posts.likeCount >= 10`. The query analyzer then figures out the most optimal way to traverse the graph of resources and attributes (across adapters) and builds a [query plan](http://en.wikipedia.org/wiki/Query_plan): the most optimal way to traverse the graph given those constraints.
 
-This is what Tower's query engine does. You build a query, which get's compiled to a "topology" (the most optimal map/way to query that data), and then performs the queries on the adapters. You get back the final result. You don't need to worry at all about the database-specific implementations.
+This is what Tower's query engine does. You build a query, which get's compiled to a "topology" (the most optimal map/way to traverse your graph of resources across adapters), and then performs the queries on the adapters. You get back the final result. You don't need to worry at all about the database-specific implementations.
 
 ## Query API
 
