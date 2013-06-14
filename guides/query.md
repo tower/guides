@@ -59,7 +59,7 @@ var facebook = require('facebook-adapter');
 facebook.query().select('user').where(...).all();
 ```
 
-By having that simpler version, if you build a REST API for your startup or whatever, you will be able to have a simple/clean API for free, with a completely robust query API. You'd simply say "include our script tag on your site", and now customer are using your super lean, lightweight, robust JavaScript API.
+By having that simpler version, if you build a REST API for your startup or whatever, you will be able to have a simple/clean API for free, with a completely robust query API. You'd simply say "include our script tag on your site", and now customers are using your super lean, lightweight, robust JavaScript API.
 
 ## Queries and Resources
 
