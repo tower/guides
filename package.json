@@ -1,6 +1,6 @@
 {
   "name": "tower-guides",
-  "version": "0.1.0",
+  "version": "0.1.01",
   "keywords": ["tower", "guides", "docs", "documentation"],
   "main": "./index.js",
   "repository": {
