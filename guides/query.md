@@ -96,13 +96,13 @@ G(V,E)
 The vertices are the adapters `A`, resources `R`, and resource attributes ("fields", `F`). So, they are _subsets of `V`_.
 
 ```
-A,R,F &sub; V
+A,R,F ⊂ V
 ```
 
 where
 
 ```
-{ adapter('mongodb'), adapter('cassandra'), ... } &#8712; A
+{ adapter('mongodb'), adapter('cassandra'), ... } ∈ A
 ```
 
 Also, `R` is a collection of subsets of `A` (don't know how to quite represent this yet).
@@ -118,7 +118,7 @@ Complex constraints are basically _joins_, where the value is pointing to a reso
 This really simplifies everything. So basically, a bunch of joins just mean there's a bunch of edges between members of `F`, call them `J`.
 
 ```
-J &sub; E
+J ⊂ E
 ```
 
 That means (at least for reasonably complex queries), you just have to solve the _[minimum cut maximum network flow](http://en.wikipedia.org/wiki/Max-flow_min-cut_theorem) problem_ for the network `J`.
@@ -129,7 +129,7 @@ If you think of it in terms of 3 adapters, `facebook, twitter, mongodb`, and the
 
 One issue is, there can't be any _directed cycles_. Realizing this simplified everything, because in my head I kept thinking of that case and not seeing a solution, but from what I've read they say _it must be a DAG_ (directed acyclic graph), no cycles! We can come back to handling the cyclic case later (maybe the algorithm can just randomly say one goes before the other).
 
-So to figure out the best way to do the query, you have to figure out the network flow problem on `J &sub; E`. That's pretty much it.
+So to figure out the best way to do the query, you have to figure out the network flow problem on `J ⊂ E`. That's pretty much it.
 
 ## Summary
 
