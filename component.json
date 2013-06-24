@@ -2,11 +2,7 @@
   "name": "tower-guides",
   "repo": "tower/guides",
   "description": "Tower Guides component",
-  "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {
-    "component/emitter": "*"
-  },
+  "version": "0.1.0",
   "development": {
     "visionmedia/mocha": "*"
   },

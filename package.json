@@ -1,5 +1,10 @@
 {
   "name": "tower-guides",
-  "version": "0.0.2",
-  "main": "./index.js"
+  "version": "0.1.0",
+  "keywords": ["tower", "guides", "docs", "documentation"],
+  "main": "./index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/tower/guides.git"
+  }
 }
