@@ -239,9 +239,48 @@ content('menu').init({ items: [ 'a', 'b' ] }).select(1);
 
 ## Expression
 
+API for creating custom parsers (based on parsing expression grammars, [PEGs](http://en.wikipedia.org/wiki/Parsing_expression_grammar)).
+
+This is a basic math example inspired from [pegjs](http://pegjs.majda.cz/online).
+
 ```js
 var expression = require('tower-expression');
+
+expression('additive')
+  .match(':multiplicative', ' + ', ':additive', function(left, op, right){
+    return left + right;
+  })
+  .match(':multiplicative');
+
+expression('multiplicative')
+  .match(':primary', ' * ', ':multiplicative', function(left, op, right){
+    return left * right;
+  })
+  .match(':primary');
+
+expression('primary')
+  .match(':integer')
+  .match('(', ':additive', ')', function(l, additive, r){
+    return additive;
+  });
+
+expression('integer')
+  .match(/[0-9]+/, function(digits){
+    return parseInt(digits, 10);
+  });
+
+var integer = expression('additive').parse('(7 + 8) * 2');
+console.log(integer); // 15
 ```
+
+One place expressions are used is in directives, for parsing statments, such as:
+
+```js
+<li data-each="user in users">{{user.username}}</li>
+<div data-text="loggedIn ? 'Profile' : 'Log in"></div>
+```
+
+There are many applications for expressions, such as custom search input expressions (like google/twitter have), custom macros, building fast client-side syntax highlighters, etc.
 
 ## Route
 

@@ -2,7 +2,7 @@
   "name": "tower-guides",
   "repo": "tower/guides",
   "description": "Tower Guides component",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "development": {
     "visionmedia/mocha": "*"
   },
