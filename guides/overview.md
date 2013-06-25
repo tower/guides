@@ -275,7 +275,7 @@ console.log(integer); // 15
 
 One place expressions are used is in directives, for parsing statments, such as:
 
-```js
+```html
 <li data-each="user in users">{{user.username}}</li>
 <div data-text="loggedIn ? 'Profile' : 'Log in"></div>
 ```
