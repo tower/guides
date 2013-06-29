@@ -11,7 +11,7 @@ They make it possible to have a standard interface to any data, anywhere.
 
 You achieve one standard query API by having adapters.
 
-All it takes to implement an adapter is defining one method, `exec`. If you do this you can perform all the standard query actions (create/read/update/delete), and the resources your adapter abstracts become usable just like any other resource (like a **m**odel in traditional MVC frameworks like Rails).
+To implement an adapter, simply implement the `exec` method. If you do this you can perform all the standard query actions (create/read/update/delete), and the resources your adapter abstracts become usable just like any other resource (like a **m**odel in traditional MVC frameworks like Rails).
 
 Here's how the `exec` method looks for some custom adapter:
 
@@ -32,7 +32,15 @@ It is up to your specific adapter to determine how to handle the query object. T
 - `query.paging`: the `limit` and `offset` values specified, if any
 - `query.sorting`: an array of the different sorting properties/directions
 
-Again, all of that is described in depth in the [query section](/guides/queries). For now just know that to implement a custom adapter, you simply implement the `exec` function, which means taking those 5 query properties and converting them into the format specific to some database or service.
+All of that is described in depth in the [query section](/guide#query). For now just know that to implement a custom adapter, you simply implement the `exec` function, which means taking those 5 query properties and converting them into the format specific to some database or service.
+
+## Adapters and Streams
+
+All adapter actions are implemented as nodejs-compliant streams. Actions are executed from a `query`. So when you create/read/update/delete records, you can pipe the result to the input of another query (or query constraint), or build a complex join-like query out of multiple sub-queries. Essentially, data becomes part of the node.js stream ecosystem. It also works like this in the browser.
+
+## Adapters are **tiny**
+
+Once you start wanting to integrate data from dozens or even hundreds and thousands of data sources, size matters. Adapters are boiled down to the bare essentials to make it so you could load dozens of adapters onto the client if desired, and not have to really worry about how that'll impact performance.
 
 ## Implementing a REST adapter
 
