@@ -1,6 +1,6 @@
 ## Resource
 
-Data models that can be stored in any database or remote service using adapters.
+Data models that can be stored in any database or remote service using adapters. It makes the semantic interoperability and standardization of data and web services possible.
 
 ```js
 var resource = require('tower-resource');
