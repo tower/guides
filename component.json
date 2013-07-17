@@ -6,6 +6,9 @@
   "development": {
     "visionmedia/mocha": "*"
   },
-  "scripts": ["index.js"],
-  "license": "MIT"
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "dependents": {}
 }
