@@ -1,6 +1,6 @@
-# Expression Engine
+# Expressions
 
-Within Tower, sits an incredibly powerful expression engine that powers every binding. We felt like we could create an expressive language that sits in element attributes.
+Expressions allow you to put data bindings on html tag elements to simplify rendering complicated data in your templates.
 
 Let's get started with a simple example:
 
@@ -8,24 +8,21 @@ Let's get started with a simple example:
 <div data-text=""></div>
 ```
 
-That's cool, right? Well, it's just an empty text binding, nothing to it. So let's add a binding to a simple attribute.
+That's cool, right? Well, it's just an empty text binding, nothing to it. So let's add a binding to a simple attribute:
 
 ```html
 <div data-text="user"></div>
 ```
 
-This would effectively render the following, if `user` would equal to `Joe`
+For example if `user` has the value of `Slim Jim`, this would render:
 
 ```html
-<div data-text="user">Joe</div>
+<div data-text="user">Slim Jim</div>
 ```
 
-This short example just showed you a simple expression; a string expression. Expressions do get more complicated than that, but the premise stays the same.
+This example is a string expression.
 
-The expression engine is hand-built. Well, you'll probably say "Yeah, sure, just like anything else that's programmed. All by hand". No, no, no. When I say "by-hand", I mean in relation to the Lexer and Parser, and anything else related to the expression engine. We don't use some sort of magical generator that produces extremely huge Lexers, Parsers, and whatever else they have.
-The expression engine is small, soon-to-be modular, and fast. This makes it viable to run on the client-side, as well as the server. Oh, yes, this has no dependencies on the DOM, which means it can be used server-side.
-
-Let's get into a more complicated example, shall we?
+Let's get into a more complicated example:
 
 ```html
 <div data-list="user in users [buffer: 2, max: 10]"></div>
@@ -43,9 +40,17 @@ Want more?
 <div data-list="user in users [buffer: 2, max: 10] | filter: startsWith(a) | sort: reverse()"></div>
 ```
 
-## Deep Dive Into Expressions
+# Expression Engine
 
-Now that you know what expressions are, let's get a better picture on how it works.
+Within Tower, sits an incredibly powerful expression engine that powers every binding. We felt like we could create an expressive language that sits in element attributes.
+
+The expression engine is hand-built. Well, you'll probably say "Yeah, sure, just like anything else that's programmed. All by hand".
+No, no, no. When I say "by-hand", I mean in relation to the components of an expression engine: a Lexer and Parser, and anything else related to the expression engine.
+We don't use some sort of magical generator that produces extremely huge Lexers, Parsers, and whatever else they have.
+The expression engine is small, modular, and fast.
+Even better, this has no dependencies on the DOM, which means it can be used client-side and server-side.
+
+Let's get a better picture on how Tower's expression engine works.
 
 The expression engine has the following stages:
 
@@ -53,7 +58,7 @@ The expression engine has the following stages:
 Input -> Lexer -> Parser -> Search
 ```
 
-`tower-expression/index.js` exposes an `expression` function and accepts a string: an expression. It'll hand the big work of lexing and parsing the string.
+`tower-expression/index.js` exposes an `expression` function and accepts a string: an expression. It'll handle the big work of lexing and parsing the string.
 
 We've made an extensible Lexer that's not specific to the expression system.
 
